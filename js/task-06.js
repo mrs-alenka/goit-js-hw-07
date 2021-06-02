@@ -16,11 +16,11 @@ inputEl.addEventListener('blur',onValidationCheck);
 function onValidationCheck(event){
     const lengthInput = inputEl.getAttribute('data-length');
     const presentValue = event.target.value.trim().length;
- if(presentValue == 0 ){
+ if(presentValue === 0 ){
     inputEl.classList.remove('valid');
     inputEl.classList.remove('invalid');
     }
- else if(lengthInput==presentValue){
+ else if(Number(lengthInput)===presentValue){
     inputEl.classList.remove('invalid');
     inputEl.classList.add('valid');
 }

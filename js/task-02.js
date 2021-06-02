@@ -11,10 +11,14 @@ const ingredients = [
     'Зелень',
     'Приправы',
   ];
-  ingredients.forEach((ingredient)=>{
+  const listEl = document.querySelector('#ingredients');
+
+  
+  const createIngridientsEl = ingredient=>{
     const ingredientsList = document.createElement("li");
     ingredientsList.textContent = ingredient;
-
-    const listEl = document.querySelector('#ingredients');
-    listEl.appendChild(ingredientsList);
-  });
+    return ingredientsList;
+  };
+  const createIngridientsList = ingredients.map(createIngridientsEl);
+  
+  listEl.append(...createIngridientsList);
